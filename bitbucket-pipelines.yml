@@ -1,0 +1,11 @@
+image: php:7-fpm
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+        script:
+          - cd /home/warrzone/www/serviceplateform_dev/
+          - php artisan migrate
+        deployment: production
